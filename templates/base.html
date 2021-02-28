@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <!-- 必须的 meta 标签 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap 的 CSS 文件 -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+    <script type="text/javascript" src="../static/js/idangerous.swiper.min.js"></script>
+
+    <title>在线漫画阅读第一站</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container"> <a href="/"> <img class="logo-img" src="http://css.mangabz.com/v202012291638/mangabz/images/logo_mangabz.png"> </a>
+        <div class="input-form"> <input type="text" id="txtKeywords" value="" placeholder="搜索你喜欢的漫画/作者" data="一拳超人"> <a href="" class="input-form-btn" id="btnSearch"><img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_search.png" class="input-form-search-logo"></a> </div>
+        <div class="login-form"> <a href="">登录</a> <span class="login-form-split"></span> <a href="/">注册</a> </div>
+        <div class="collect-form"> <a href="" class="collect-form-btn-1">历史</a> <a href="" class="collect-form-btn-2">收藏</a> </div>
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+
+
+    <script type="text/javascript" src="../static/js/comicindex.js"></script>
+  </body>
+</html>
