@@ -1,6 +1,6 @@
-// $(document).ready(function () {
+$(document).ready(function () {
 
-// });
+});
 var beforeIndex = 0;
 $("#hotCatgoryId .list-con-title-class a").hover(function () {
     $("#hotCatgoryId .list-con-title-class a").removeClass("active");

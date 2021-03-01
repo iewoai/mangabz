@@ -2,11 +2,15 @@
 
 {% block content %}
     <div class="toast-win" style="display:none;"></div>
+    <!-- 首页左1右2大图，可调整位置，丢全站热度最高 -->
     <div class="banner-con">
         <div class="container"> <a href="/73bz/" title="鬼灭之刃"><img src="http://static.mangabz.com/mangabz/12/2019/10/26/b105f94957af4df8.jpg" class="banner-1"></a> <a href="/266bz/" title="咒术回战"><img src="http://static.mangabz.com/mangabz/86/2021/2/2/12d889a402e44b11.jpg" class="banner-2"></a> <a href="/2255bz/" title="干杂活我乃最强"><img src="http://static.mangabz.com/mangabz/86/2021/2/2/cdf6fe4e81084b7a.jpg" class="banner-3"></a> <a href="/1294bz/" title="最后再拜托您一件事可以吗"><img src="http://static.mangabz.com/mangabz/86/2021/2/2/20078eee91644ef9.jpg" class="banner-3"></a> </div>
     </div>
+
+    
     <div class="index-block">
         <div class="container">
+          <!-- 人气推荐，可个性化推荐 -->
           <div class="list-con-1">
             <p class="list-con-title">人气推荐</p>
             <div class="index-manga-list">
@@ -28,6 +32,7 @@
               </div>
             </div>
           </div>
+          <!-- 漫画热度排名 -->
           <div class="rank-con">
             <p class="list-con-title">热度排行</p>
             <div class="rank-list">
@@ -58,6 +63,149 @@
               <div class="rank-item-2 list"> <a href="/38bz/"> <img src="http://cover.mangabz.com/1/38/20191206093248_320x246_31.jpg" style="display:none;" class="rank-item-cover"> <span class="rank-top-x">7</span> </a>
                 <p class="rank-item-title"><a href="/38bz/">一拳超人</a></p>
                 <p class="rank-item-right"> <span>热血</span> <span>冒险</span> </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 热门分类的热门漫画 -->
+      <div class="index-block">
+        <div class="container">
+          <div class="list-con-2" id="hotCatgoryId">
+            <p class="list-con-title"> <a href="javascript:void(0);" class="list-con-title-more"></a> <span>热门分类</span> <span class="list-con-title-class"> <a href="javascript:void(0);" class="">热血</a> <a href="javascript:void(0);" class="">恋爱</a> <a href="javascript:void(0);" class="active">校园</a> <a href="javascript:void(0);">奇幻</a> <a href="javascript:void(0);">科幻</a> </span> </p>
+            <div class="index-manga-list" style="display: none;">
+              <div class="index-manga-item"> <a href="/265bz/"><img src="http://cover.mangabz.com/1/265/20191203170212_180x240_27.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="石纪元（Dr.Stone）"><a href="/265bz/">石纪元（Dr.Stone）</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> <span>冒险</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/14654bz/"><img src="http://cover.mangabz.com/15/14654/20201010164703_180x240_24.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="游戏王SEVENS 卢克！爆裂霸道传！！"><a href="/14654bz/">游戏王SEVENS 卢克！爆裂霸道传！！</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/264bz/"><img src="http://cover.mangabz.com/1/264/20191203170021_180x240_20.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="我的英雄学园"><a href="/264bz/">我的英雄学园</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> <span>冒险</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/15260bz/"><img src="http://cover.mangabz.com/16/15260/20201115112842_180x240_26.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="疫神的病历簿"><a href="/15260bz/">疫神的病历簿</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> <span>冒险</span> <span>魔法</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/1573bz/"><img src="http://cover.mangabz.com/2/1573/20191216151856_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="棒球大联盟2nd"><a href="/1573bz/">棒球大联盟2nd</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> <span>运动</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/266bz/"><img src="http://cover.mangabz.com/1/266/20191203170525_180x240_26.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="咒术回战"><a href="/266bz/">咒术回战</a></p>
+                <p class="index-manga-item-subtitle"> <span>热血</span> <span>冒险</span> </p>
+              </div>
+            </div>
+            <!--2-->
+            <div class="index-manga-list" style="display: none;">
+              <div class="index-manga-item"> <a href="/60bz/"><img src="http://cover.mangabz.com/1/60/20191203095013_180x240_19.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="辉夜大小姐想让我告白 ~天才们的恋爱头脑战~"><a href="/60bz/">辉夜大小姐想让我告白 ~天才们的恋爱头脑战~</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/7456bz/"><img src="http://cover.mangabz.com/8/7456/20200516223404_180x240_20.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="超绝可爱男生等我回家"><a href="/7456bz/">超绝可爱男生等我回家</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/2258bz/"><img src="http://cover.mangabz.com/3/2258/20200304162942_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="女友成双"><a href="/2258bz/">女友成双</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> <span>校园</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/15210bz/"><img src="http://cover.mangabz.com/16/15210/20201113192251_180x240_26.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="此情即恋"><a href="/15210bz/">此情即恋</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/11104bz/"><img src="http://cover.mangabz.com/12/11104/20200720164239_180x240_18.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="我们相恋的理由"><a href="/11104bz/">我们相恋的理由</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/9083bz/"><img src="http://cover.mangabz.com/10/9083/20200608093216_180x240_17.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="若你想夺走"><a href="/9083bz/">若你想夺走</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+            </div>
+            <!--3-->
+            <div class="index-manga-list" style="display: block;">
+              <div class="index-manga-item"> <a href="/18939bz/"><img src="http://cover.mangabz.com/19/18939/20210301223717_180x240_20.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="露出导演"><a href="/18939bz/">露出导演</a></p>
+                <p class="index-manga-item-subtitle"> <span>校园</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/2258bz/"><img src="http://cover.mangabz.com/3/2258/20200304162942_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="女友成双"><a href="/2258bz/">女友成双</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> <span>校园</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/13124bz/"><img src="http://cover.mangabz.com/14/13124/20200908110617_180x240_21.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="请不要过分期待这样的我"><a href="/13124bz/">请不要过分期待这样的我</a></p>
+                <p class="index-manga-item-subtitle"> <span>校园</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/11398bz/"><img src="http://cover.mangabz.com/12/11398/20200802000640_180x240_18.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="时薪300日元的死神"><a href="/11398bz/">时薪300日元的死神</a></p>
+                <p class="index-manga-item-subtitle"> <span>校园</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/7286bz/"><img src="http://cover.mangabz.com/8/7286/20200509232302_180x240_14.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="复仇的教科书"><a href="/7286bz/">复仇的教科书</a></p>
+                <p class="index-manga-item-subtitle"> <span>校园</span> <span>悬疑</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/18683bz/"><img src="http://cover.mangabz.com/19/18683/20210214115530_180x240_24.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="濑乃同学对恋爱一窍不通"><a href="/18683bz/">濑乃同学对恋爱一窍不通</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> <span>校园</span> </p>
+              </div>
+            </div>
+            <!--4-->
+            <div class="index-manga-list" style="display:none;">
+              <div class="index-manga-item"> <a href="/11270bz/"><img src="http://cover.mangabz.com/12/11270/20200728154241_180x240_24.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="转生剑圣想要悠闲地生活"><a href="/11270bz/">转生剑圣想要悠闲地生活</a></p>
+                <p class="index-manga-item-subtitle"> <span>冒险</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/10944bz/"><img src="http://cover.mangabz.com/11/10944/20200714095753_180x240_16.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="僵尸少女小骸"><a href="/10944bz/">僵尸少女小骸</a></p>
+                <p class="index-manga-item-subtitle"> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/106bz/"><img src="http://cover.mangabz.com/1/106/20191220142953_180x240_18.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="图书馆的大魔法师"><a href="/106bz/">图书馆的大魔法师</a></p>
+                <p class="index-manga-item-subtitle"> <span>冒险</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/1007bz/"><img src="http://cover.mangabz.com/2/1007/20191213093036_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="物语中的人"><a href="/1007bz/">物语中的人</a></p>
+                <p class="index-manga-item-subtitle"> <span>魔法</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/5879bz/"><img src="http://cover.mangabz.com/6/5879/20200422160138_180x240_24.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="驯服暴君后逃跑"><a href="/5879bz/">驯服暴君后逃跑</a></p>
+                <p class="index-manga-item-subtitle"> <span>魔法</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/1654bz/"><img src="http://cover.mangabz.com/2/1654/20191213104126_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="一不小心在异世界当上了最强魔王的十个孩子的妈妈"><a href="/1654bz/">一不小心在异世界当上了最强魔王的十个孩子的妈妈</a></p>
+                <p class="index-manga-item-subtitle"> <span>恋爱</span> </p>
+              </div>
+            </div>
+            <!--5-->
+            <div class="index-manga-list" style="display:none;">
+              <div class="index-manga-item"> <a href="/207bz/"><img src="http://cover.mangabz.com/1/207/20191203094359_180x240_16.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="关于我转生后成为史莱姆的那件事"><a href="/207bz/">关于我转生后成为史莱姆的那件事</a></p>
+                <p class="index-manga-item-subtitle"> <span>科幻</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/18738bz/"><img src="http://cover.mangabz.com/19/18738/20210217204822_180x240_20.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="坦克女孩"><a href="/18738bz/">坦克女孩</a></p>
+                <p class="index-manga-item-subtitle"> <span>科幻</span> <span>魔法</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/917bz/"><img src="http://cover.mangabz.com/1/917/20191209154104_180x240_23.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="黑礁"><a href="/917bz/">黑礁</a></p>
+                <p class="index-manga-item-subtitle"> <span>科幻</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/18421bz/"><img src="http://cover.mangabz.com/19/18421/20210129085112_180x240_24.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="未来态：超级英雄军团"><a href="/18421bz/">未来态：超级英雄军团</a></p>
+                <p class="index-manga-item-subtitle"> <span>科幻</span> <span>魔法</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/15153bz/"><img src="http://cover.mangabz.com/16/15153/20201109100613_180x240_20.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="隐退人偶师的MMO机巧叙事诗"><a href="/15153bz/">隐退人偶师的MMO机巧叙事诗</a></p>
+                <p class="index-manga-item-subtitle"> <span>冒险</span> <span>科幻</span> </p>
+              </div>
+              <div class="index-manga-item"> <a href="/14472bz/"><img src="http://cover.mangabz.com/15/14472/20201001093954_180x240_22.jpg" class="index-manga-item-cover"></a>
+                <p class="index-manga-item-title" title="真相部"><a href="/14472bz/">真相部</a></p>
+                <p class="index-manga-item-subtitle"> <span>科幻</span> </p>
               </div>
             </div>
           </div>

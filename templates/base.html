@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap 的 CSS 文件 -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"> -->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
     <script type="text/javascript" src="../static/js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
+    
 
     <title>在线漫画阅读第一站</title>
   </head>
@@ -23,7 +23,10 @@
     </div>
     {% block content %}
     {% endblock %}
-
+    <div class="footer">
+      <p>Copyright (C) 2005-2021 </p>
+      <div class="lang-con"> <img class="lang-logo" src="http://css.mangabz.com/v202012291638/mangabz/images/lang.png"> <a href="javascript:void(0);" class="lang-option active">白天</a> <a href="javascript:void(0);" class="lang-option noactive" onclick="SetLang(1)" style="display: none;">黑夜</a> </div>
+    </div>
 
     <script type="text/javascript" src="../static/js/comicindex.js"></script>
   </body>
