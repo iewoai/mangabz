@@ -1,0 +1,9 @@
+.clearfix:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.clearfix{zoom:1}
+.poster-main{width:290px;height:255px;position:relative;left: -50px;}
+.poster-main a,.poster-main img{display:block;border-radius: 6px;}
+.poster-main .poster-list{width:300px;height:255px}
+.poster-main .poster-list .poster-item{width:190px;height:255px;position:absolute;left:0;top:0}
+.poster-main .poster-btn{position:absolute;top:0;z-index:10;cursor:pointer}
+.poster-main .poster-prev-btn{left:0}
+.poster-main .poster-next-btn{right:0}

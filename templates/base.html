@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="zh-CN">
   <head>
-    <!-- 必须的 meta 标签 -->
+    <title>在线漫画阅读第一站</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
-    <script type="text/javascript" src="../static/js/idangerous.swiper.min.js"></script>
-    <script type="text/javascript" src="../static/js/jquery-3.2.1.min.js"></script>
     
-
-    <title>在线漫画阅读第一站</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/carousel.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script type="text/javascript" src="../static/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../static/js/idangerous.swiper.min.js"></script>
+    <script type="text/javascript" src="../static/js/carousel.js"></script>
+    <script type="text/javascript" src="../static/js/comm.js"></script>
+    
   </head>
   <body>
     <div class="header">
@@ -21,6 +24,7 @@
         <div class="collect-form"> <a href="" class="collect-form-btn-1">历史</a> <a href="" class="collect-form-btn-2">收藏</a> </div>
       </div>
     </div>
+    <div class="toast-win" style="display:none;"></div>
     {% block content %}
     {% endblock %}
     <div class="footer">
@@ -29,5 +33,19 @@
     </div>
 
     <script type="text/javascript" src="../static/js/comicindex.js"></script>
+    <script type="text/javascript">
+      $(".poster-main").PicCarousel({
+        "width": 290,
+        "height": 255,
+        "posterWidth": 190,
+        "posterHeight": 255,
+        "scale": 0.95,
+        "speed": 500
+      });
+      var mySwiper = new Swiper('.swiper-container', {
+        loop: true,
+        speed: 500
+      })
+    </script>
   </body>
 </html>

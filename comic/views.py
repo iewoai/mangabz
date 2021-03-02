@@ -5,6 +5,10 @@ def home(request):
     import requests
     import json
 
-    api_request = requests.get("https://api.github.com/users?since=135")
-    api = json.loads(api_request.content)
-    return render(request, "home.html", {"api": api})
+    # api_request = requests.get("https://api.github.com/users?since=135")
+    # api = json.loads(api_request.content)
+    # return render(request, "home.html", {"api": api})
+    return render(request, "home.html")
+
+def detail(request, rowkey):
+    return render(request, "detail.html")
