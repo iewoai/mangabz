@@ -19,5 +19,6 @@ from django.urls import path, include, re_path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('comic.urls')),
-    re_path('(\w+)/', include('comic.urls')),
+    re_path('(\w+)bz/', include('comic.urls')),
+    re_path('chapter-(\w+)-s(1|2)/', include('comic.urls')),
 ]

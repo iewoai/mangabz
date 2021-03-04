@@ -1,0 +1,3 @@
+{% for x in chapter_data %}
+<a href="{{x.html_url}}" class="detail-list-form-item  " title="{{x.full_title}}" target="_blank">{{x.title}} {{x.full_title}}                    <span>（{{x.page}}P）</span> </a>
+{% endfor %}

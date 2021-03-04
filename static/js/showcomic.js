@@ -1,21 +1,21 @@
-// 点击顺序和倒序时记录用户数据
-$(function () {
-    $(".btn_collection").each(function () {
-        $.ajax({
-            url: 'userdata.ashx?d=' + new Date().getTime(),
-            dataType: 'json',
-            data: { tp: 7, mid: MANGABZ_COMIC_MID },
-            type: 'POST',
-            success: function (data) {
-                if (data && data.msg == "1") {
-                    if ($(".detail-info-btn-icon-2").length > 0) {
-                        $(".detail-info-btn-icon-2").attr("src", MANGABZ_CSS + "images/icon_collection_2.png");
-                    }
-                }
-            }
-        });
-    });
-});
+// 记录按钮点击
+// $(function () {
+//     $(".btn_collection").each(function () {
+//         $.ajax({
+//             url: 'userdata.ashx?d=' + new Date().getTime(),
+//             dataType: 'json',
+//             data: { tp: 7, mid: MANGABZ_COMIC_MID },
+//             type: 'POST',
+//             success: function (data) {
+//                 if (data && data.msg == "1") {
+//                     if ($(".detail-info-btn-icon-2").length > 0) {
+//                         $(".detail-info-btn-icon-2").attr("src", MANGABZ_CSS + "images/icon_collection_2.png");
+//                     }
+//                 }
+//             }
+//         });
+//     });
+// });
 // 收藏事件
 function setBookmarker(cid, mid, p, uid) {
     if (uid <= 0)
@@ -73,7 +73,7 @@ function changeSort() {
         $('.detail-list-form-title-icon').attr('src', MANGABZ_CSS+'images/icon_sort_down.png');
         $('.detail-list-form-title-right span').text('倒序');
     }
-    $("#chapterlistload").load("/template-" + MANGABZ_COMIC_MID + "-s" + MANGABZ_COMIC_SORT + "/");
+    $("#chapterlistload").load("/chapter-" + MANGABZ_COMIC_MID + "-s" + MANGABZ_COMIC_SORT + "/");
     $('.detail-list-form-more').removeClass('hide');
 }
 // 展开
