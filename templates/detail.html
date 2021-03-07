@@ -5,30 +5,40 @@
 
 <script type="text/javascript">
     var MANGABZ_COMIC_TEMPLATE = 2;
-    var MANGABZ_COMIC_SORT = 2;
+    var MANGABZ_COMIC_SORT = 1;
     var MANGABZ_COMIC_MID = 207;
     var MANGABZ_USERID = "0";
-    var MANGABZ_CSS = '../';
-    changeSort()
+    var MANGABZ_CSS = '../static/';
+    $(function(){
+        changeSort();
+    });
 </script>
 
 <div class="detail-info-1">
     <div class="container">
-        <div class="detail-info"> <img src="http://cover.mangabz.com/1/207/20191203094359_360x480_53.jpg"
+        <div class="detail-info"> <img src="{{data.cover_img_url}}"
                 class="detail-info-cover">
-            <p class="detail-info-title"> 关于我转生后成为史莱姆的那件事</p>
-            <p class="detail-info-stars"> <img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_star_s.png"
+            <p class="detail-info-title"> {{data.title}}</p>
+            <p class="detail-info-stars"> <img src="../static/images/icon_star_s.png"
                     class="detail-info-star"> <img
-                    src="http://css.mangabz.com/v202012291638/mangabz/images/icon_star_n.png" class="detail-info-star">
-                <img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_star_n.png" class="detail-info-star">
-                <img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_star_n.png" class="detail-info-star">
-                <img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_star_n.png" class="detail-info-star">
-                <span>2.0分</span>
+                    src="../static/images/icon_star_n.png" class="detail-info-star">
+                <img src="../static/images/icon_star_n.png" class="detail-info-star">
+                <img src="../static/images/icon_star_n.png" class="detail-info-star">
+                <img src="../static/images/icon_star_n.png" class="detail-info-star">
+                <span>{{data.star}}分</span>
             </p>
-            <p class="detail-info-tip"> <span>作者：<a
-                        href="/search?title=%e5%b7%9d%e4%b8%8a%e6%b3%b0%e6%a0%91&amp;f=2">川上泰树</a><a
-                        href="/search?title=%e4%bc%8f%e6%bf%91&amp;f=2">伏濑</a></span> <span>状态：<span>连载中</span></span>
-                <span> 题材： <span class="item">科幻</span> </span>
+            <p class="detail-info-tip"> 
+                <span>作者：
+                    {% for x in data.author %}
+                        <a href="/search?title={{x}}&amp;f=2">{{x}}</a>
+                    {% endfor %}
+                </span> 
+                <span>状态：<span>{{data.status}}</span></span>
+                <span> 题材： 
+                    {% for x in data.class %}
+                        <span class="item">{{x}}</span> 
+                    {% endfor %}
+                </span>
             </p>
         </div>
     </div>
@@ -37,13 +47,13 @@
 <div class="detail-info-2">
     <div class="container">
         <div class="detail-info">
-            <p class="detail-info-content">普通上班族三上悟（37，童贞）遇刺身亡。迎接他的，是转生后的异世界史莱姆生活……</p>
-            <div class="detial-info-btn-con"> <a href="/m26072/" title="第1卷" class="detail-info-btn-1">开始阅读<img
-                        src="http://css.mangabz.com/v202012291638/mangabz/images/icon_read.png"
+            <p class="detail-info-content">{{data.description}}</p>
+            <div class="detial-info-btn-con"> <a href="{{data.first_chapter.chapter_url}}" title="{{data.first_chapter.full_title}} {{data.first_chapter.title}}" class="detail-info-btn-1">开始阅读<img
+                        src="../static/images/icon_read.png"
                         class="detail-info-btn-icon-1"></a> <a href="javascript:void(0);"
                     onclick="setBookmarker(0,MANGABZ_COMIC_MID,0,MANGABZ_USERID)" id="btn_collection207" mid="207"
                     class="detail-info-btn-2 btn_collection">收藏<img
-                        src="http://css.mangabz.com/v202012291638/mangabz/images/icon_collection_1.png"
+                        src="../static/images/icon_collection_1.png"
                         class="detail-info-btn-icon-2"></a> </div>
         </div>
     </div>
@@ -51,10 +61,10 @@
 
 <div class="container">
     <div class="detail-list-form-title">
-        <a href="javascript:void(0);" onclick="changeSort();" class="detail-list-form-title-right"><span>倒序</span><img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_sort_down.png" class="detail-list-form-title-icon"></a> 连载中 | 共81章, 昨天 18:00 <span class="s">最新<span> <a href="/m164936/" title="关于我转生后成为史莱姆的那件事 第81话" style="color:#ff3f60;" target="_blank">第81话 试看版</a> </span> </span>
+        <a href="javascript:void(0);" onclick="changeSort();" class="detail-list-form-title-right"><span>倒序</span><img src="../static/images/icon_sort_down.png" class="detail-list-form-title-icon"></a> {{data.status}} | 共{{data.chapter_num}}章, {{data.update_time}} <span class="s">最新<span> <a href="{{data.latest_chapter.chapter_url}}" title="{{data.title}} {{data.latest_chapter.title}}" style="color:#ff3f60;" target="_blank">{{data.latest_chapter.full_title}} {{data.latest_chapter.title}}</a> </span> </span>
     </div>
     <div class="detail-list-form-con" id="chapterlistload">
     </div> 
-    <a href="javascript:void(0);" onclick="showMoreItem();" class="detail-list-form-more">展开全部章节<img src="http://css.mangabz.com/v202012291638/mangabz/images/icon_down.png" class="detail-list-form-more-icon"></a>
+    <a href="javascript:void(0);" onclick="showMoreItem();" class="detail-list-form-more">展开全部章节<img src="../static/images/icon_down.png" class="detail-list-form-more-icon"></a>
 </div>
 {% endblock %}

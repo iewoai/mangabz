@@ -1,3 +1,9 @@
 {% for x in chapter_data %}
+
+{% if forloop.counter <= 20 %}
 <a href="{{x.html_url}}" class="detail-list-form-item  " title="{{x.full_title}}" target="_blank">{{x.title}} {{x.full_title}}                    <span>（{{x.page}}P）</span> </a>
+{% else %}
+<a href="{{x.html_url}}" class="detail-list-form-item  hide" title="{{x.full_title}}" target="_blank">{{x.title}} {{x.full_title}}                    <span>（{{x.page}}P）</span> </a>
+{% endif %}
+
 {% endfor %}

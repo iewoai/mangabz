@@ -63,6 +63,7 @@ $(function () {
 
 // 倒序正序
 function changeSort() {
+    console.log('调试区');
     if (MANGABZ_COMIC_SORT == 2) {
         MANGABZ_COMIC_SORT = 1;
         $('.detail-list-form-title-icon').attr('src', MANGABZ_CSS+'images/icon_sort_up.png');
