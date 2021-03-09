@@ -531,3 +531,7 @@ def chapter(request, rowkey, sort):
     elif(sort == "1"):
         chapter_data.reverse()
         return render(request, "detail_sort.html", {"chapter_data": chapter_data})
+
+def pages(request, rowkey):
+    data = []
+    return render(request, "page.html", {"data":data})

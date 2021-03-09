@@ -1,0 +1,27 @@
+body{background-color: #272727;}
+
+.container{width: 1200px;margin: 0 auto;}
+
+.top-bar{height: 74px;position: fixed;top: 0;left: 0;width: 100%;}
+.bottom-bar{height: 50px;position: fixed;bottom: 0;left: 0;width: 100%;}
+
+.top-bar-tool{height: 74px;background-color: #1e1e1e;-webkit-transition: top 0.5s ease;-moz-transition: top 0.5s ease;transition: top 0.5s ease;position: relative;top: -74px;}
+.bottom-bar-tool{height: 50px;background-color: #1e1e1e;-webkit-transition: bottom 0.5s ease;-moz-transition: bottom 0.5s ease;transition: bottom 0.5s ease;position: relative;bottom: -50px;}
+
+.top-title{height: 74px;line-height: 74px;font-size: 16px;color: #FFFFFF;letter-spacing: 0;}
+.top-back{vertical-align: top;padding: 29px 10px;}
+
+.bottom-title{height: 50px;line-height: 50px;font-size: 16px;color: #999999;letter-spacing: 0;display: inline-block;}
+.bottom-logo{vertical-align: top;padding: 15px 10px;}
+.bottom-right{float: right;}
+.bottom-page2{line-height: 50px;font-size: 16px;color: #999999;letter-spacing: 0;margin: 0 5px;}
+
+.tool .top-bar-tool{top: 0;}
+.tool .bottom-bar-tool{bottom: 0;}
+
+.readForm{text-align: center;font-size: 0;}
+.readForm img{width: 100%;max-width: 1080px;margin: 10px 0;}
+
+/*提示样式*/
+.toast-win{position: fixed;padding: 14px 50px;font-size: 16px;color: #fff;background-color: rgba(0,0,0,0.7);width: 200px;top: 20%;left: 50%;margin-left: -120px;text-align: center;border-radius: 10px;}
+

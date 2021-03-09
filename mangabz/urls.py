@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('comic.urls')),
     re_path('(\w+)bz/', include('comic.urls')),
     re_path('chapter-(\w+)-s(1|2)/', include('comic.urls')),
+    re_path('m(\w+)/', include('comic.urls')),
 ]
