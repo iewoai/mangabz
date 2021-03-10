@@ -15,6 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
+from django.views import static
+from django.conf.urls import url
+from mangabz.settings import STATIC_ROOT
+import comic
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,4 +26,8 @@ urlpatterns = [
     re_path('(\w+)bz/', include('comic.urls')),
     re_path('chapter-(\w+)-s(1|2)/', include('comic.urls')),
     re_path('m(\w+)/', include('comic.urls')),
+    url(r'^static/(?P<path>.*)$', static.serve, {'document_root':STATIC_ROOT}, name='static'),
 ]
+
+# 定义错误跳转页面
+handler404 = comic.views.page_not_found

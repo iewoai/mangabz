@@ -533,5 +533,12 @@ def chapter(request, rowkey, sort):
         return render(request, "detail_sort.html", {"chapter_data": chapter_data})
 
 def pages(request, rowkey):
-    data = []
+    data = {
+        "rowkey":"207",
+        "chapter_url":"/m164936/",
+
+    }
     return render(request, "page.html", {"data":data})
+
+def page_not_found(request, exception):
+    return render(request, '404.html', status=404)
