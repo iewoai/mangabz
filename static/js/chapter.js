@@ -57,7 +57,7 @@ function setcookiedm() {
         cookiedm = MANGABZ_COOKIEDOMAIN;
     }
     else {
-        cookiedm = 'mangabz.com';
+        cookiedm = 'iewaoi.com';
     }
 }
 

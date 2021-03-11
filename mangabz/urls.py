@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django import urls
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views import static
@@ -26,6 +27,7 @@ urlpatterns = [
     re_path('(\w+)bz/', include('comic.urls')),
     re_path('chapter-(\w+)-s(1|2)/', include('comic.urls')),
     re_path('m(\w+)/', include('comic.urls')),
+    re_path('m(\w+)/chapterimage.ashx?cid=<str:cid>&page=<str:page>&key=&_cid=<str:cid>&_mid=<str:mid>&_dt=<str:date>&_sign=<str:sign>', include('comic.urls')),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root':STATIC_ROOT}, name='static'),
 ]
 

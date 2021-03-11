@@ -13,17 +13,17 @@
   <script src="../static/js/chapter.js" type="text/javascript"></script>
   <script type="text/javascript">
     var isVip = "False";
-    var MANGABZ_COOKIEDOMAIN = 'mangabz.com';
-    var COMIC_MID = 207;
-    var MANGABZ_CURL = "/m164936/";
-    var MANGABZ_CURL_END = "/m164936-end/";
-    var MANGABZ_CTITLE = "关于我转生后成为史莱姆的那件事 第81话";
-    var MANGABZ_MID = 207;
-    var MANGABZ_CID = 164936;
-    var MANGABZ_IMAGE_COUNT = 68;
+    var MANGABZ_COOKIEDOMAIN = 'iewoai.com';
+    var COMIC_MID = {{ data.rowkey }};
+    var MANGABZ_CURL = "{{ data.chapter.chapter_url }}";
+    var MANGABZ_CURL_END = "{{ data.chapter.page_end_url }}";
+    var MANGABZ_CTITLE = "{{ data.chapter.title }} {{ data.chapter.full_title }}";
+    var MANGABZ_MID = {{ data.rowkey }};
+    var MANGABZ_CID = {{ data.chapter.cid }};
+    var MANGABZ_IMAGE_COUNT = {{ data.chapter.page }};
     var MANGABZ_USERID = 0;
     var MANGABZ_FROM = "%2fm164936%2f";
-    var MANGABZ_PAGETYPE = 9;
+    // var MANGABZ_PAGETYPE = 9;
     var MANGABZ_PAGEINDEX = 1;
     var MANGABZ_PAGEPCOUNT = 1;
     var MANGABZ_POSTCOUNT = 0;
@@ -34,7 +34,7 @@
     var MANGABZ_READMODEL = 1;
     var MANGABZ_CURRENTFOCUS = 1;
     var MANGABZ_VIEWSIGN = "53d5c4acca0229a1c43f3b2efbc0aa99";
-    var MANGABZ_VIEWSIGN_DT = "2021-03-09 21:52:06";
+    var MANGABZ_VIEWSIGN_DT = "{{ data.date }}";
     reseturl(window.location.href, MANGABZ_CURL.substring(0, MANGABZ_CURL.length - 1));
   </script>
   <style type="text/css">
@@ -48,7 +48,7 @@
   <div class="top-bar">
     <div class="top-bar-tool">
       <div class="container">
-        <p class="top-title"><a href="/207bz/"><img src="../static/images/icon_back.png" class="top-back" /></a> 第81话 试看版</p>
+        <p class="top-title"><a href="/207bz/"><img src="../static/images/icon_back.png" class="top-back" /></a> {{ data.chapter.title }} {{ data.chapter.full_title }}</p>
       </div>
     </div>
   </div>
@@ -58,7 +58,7 @@
   <div class="bottom-bar">
     <div class="bottom-bar-tool">
       <div class="container">
-        <div class="bottom-right"> <a href="/m160758/"><img src="../static/images/icon_shangyizhang.png" class="bottom-logo" /></a> <a href="javascript:ShowPre();"><img src="../static/images/icon_shangyiye.png" class="bottom-logo" /></a> <span class="bottom-page2"><span id="lbcurrentpage">1</span>-68</span> <a href="javascript:ShowNext();"><img src="../static/images/icon_xiayiye.png" class="bottom-logo" /></a> </div>
+        <div class="bottom-right"> <a href="{{ data.chapter.chapter_url }}"><img src="../static/images/icon_shangyizhang.png" class="bottom-logo" /></a> <a href="javascript:ShowPre();"><img src="../static/images/icon_shangyiye.png" class="bottom-logo" /></a> <span class="bottom-page2"><span id="lbcurrentpage">1</span>-{{ data.chapter.page }}</span> <a href="javascript:ShowNext();"><img src="../static/images/icon_xiayiye.png" class="bottom-logo" /></a> </div>
       </div>
     </div>
   </div>

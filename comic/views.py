@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from mangabz.utils import *
+import json
+from django.http.response import HttpResponse
+
 
 def home(request):
     # 首页左1(5:3)大右3(10:3, 5:3*2)小图，可调整位置，丢全站热度最高
@@ -511,11 +514,11 @@ def detail(request, rowkey):
         "description":"普通上班族三上悟（37，童贞）遇刺身亡。迎接他的，是转生后的异世界史莱姆生活……",
         "first_chapter":{
             "chapter_url":"/m26072/",
-            "title":"title",
+            "title":"第一卷",
             "full_title":"",
         },
-        "lastest_chapter":{
-            "chapter_url":"/m26072/",
+        "latest_chapter":{
+            "chapter_url":"/m164936/",
             "title":"第81话",
             "full_title":"试看版",
         },
@@ -535,10 +538,32 @@ def chapter(request, rowkey, sort):
 def pages(request, rowkey):
     data = {
         "rowkey":"207",
-        "chapter_url":"/m164936/",
-
+        "date":"2021-03-11 21:52:06",
+        "title":"关于我转生后成为史莱姆的那件事",
+        "description":"普通上班族三上悟（37，童贞）遇刺身亡。迎接他的，是转生后的异世界史莱姆生活……",
+        "keyword":"关于我转生后成为史莱姆的那件事,关于我转生后成为史莱姆的那件事漫画,关于我转生后成为史莱姆的那件事漫画免费阅读",
+        "chapter":{
+            "chapter_url":"/m164936/",
+            "page_end_url":"/m164936-end/",
+            "cid":"164936",
+            "page":"68",
+            "title":"第81话",
+            "full_title":"试看版",
+        }
     }
     return render(request, "page.html", {"data":data})
+
+def get_img_url_list(request):
+    result = {}#先指定一个字典
+    username = request.GET.get('username')
+    mobile = request.GET.get('mobile')
+    date = request.GET.get('date')
+    result['user'] = username
+    result['mobileNum'] = mobile
+    result['date'] = date
+    result = json.dumps(result)
+    #指定返回数据类型为json且编码为utf-8
+    return HttpResponse(result,content_type='application/json;charset=utf-8')
 
 def page_not_found(request, exception):
     return render(request, '404.html', status=404)
