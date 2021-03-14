@@ -24,10 +24,10 @@ import comic
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('comic.urls')),
-    re_path('(\w+)bz/', include('comic.urls')),
-    re_path('chapter-(\w+)-s(1|2)/', include('comic.urls')),
-    re_path('m(\w+)/', include('comic.urls')),
-    re_path('m(\w+)/chapterimage.ashx?cid=<str:cid>&page=<str:page>&key=&_cid=<str:cid>&_mid=<str:mid>&_dt=<str:date>&_sign=<str:sign>', include('comic.urls')),
+    re_path(r'^(\w+)bz/', include('comic.urls')),
+    re_path(r'^chapter-(\w+)-s(1|2)/', include('comic.urls')),
+    re_path(r'^m(?P<rowkey>\w+)(-p(?P<current_page>\w+))?/', include('comic.urls')),
+    re_path(r'^m(?P<cid>\w+)(-p(?P<start_page>\w+))?/chapterimage.ashx', include('comic.urls')),
     url(r'^static/(?P<path>.*)$', static.serve, {'document_root':STATIC_ROOT}, name='static'),
 ]
 

@@ -15,7 +15,7 @@ var nosethistory = false;
 var eTimer = null;
 $(function () {
     $(':input').focus(function () { MANGABZ_CURRENTFOCUS = 0; }).blur(function () { MANGABZ_CURRENTFOCUS = 1; });
-  
+
     $("#cp_fun_post").click(function () {
         newreply($(this).attr("val"));
     }
@@ -623,9 +623,10 @@ function ajaxloadimage(cpfobject, isrefreshad) {
         },
         success: function (msg) {
             if (msg != '') {
-                var arr;
-                eval(msg);
-                arr = d;
+                var arr = msg['img_url_list'];
+                // console.log(arr)
+                // console.log(arr['img_url_list'])
+                // console.log(typeof(arr))
                 if (typeof (d_c) != 'undefined') {
                     errorimage = d_c;
                 }

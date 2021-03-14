@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from mangabz.utils import *
 import json
-from django.http.response import HttpResponse
+from django.http import HttpResponse
 
 
 def home(request):
@@ -535,7 +535,7 @@ def chapter(request, rowkey, sort):
         chapter_data.reverse()
         return render(request, "detail_sort.html", {"chapter_data": chapter_data})
 
-def pages(request, rowkey):
+def pages(request, rowkey, current_page=1):
     data = {
         "rowkey":"207",
         "date":"2021-03-11 21:52:06",
@@ -549,21 +549,32 @@ def pages(request, rowkey):
             "page":"68",
             "title":"第81话",
             "full_title":"试看版",
+            "current_page":str(current_page),
         }
     }
     return render(request, "page.html", {"data":data})
 
-def get_img_url_list(request):
+def get_img_url_list(request, cid, start_page):
+    img_list = [
+        'http://image.mangabz.com/1/207/164936/1_5322.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/2_3035.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/3_5048.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/4_6678.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/5_8187.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/6_6670.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/7_3804.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/8_8311.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/9_1749.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/10_5490.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/11_4747.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/12_5247.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/13_9082.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/14_6432.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/15_1764.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/16_6114.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/17_9796.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/18_9744.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/19_2174.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/20_5460.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/21_7013.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/22_1675.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/23_2170.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/24_9326.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/25_6537.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/26_7955.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/27_7558.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/28_6384.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/29_8919.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/30_4799.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/31_1927.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/32_1724.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/33_5252.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/34_8616.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/35_9822.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/36_1085.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/37_3159.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/38_5338.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/39_7327.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/40_5885.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/41_6482.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/42_3267.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/43_2680.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/44_2212.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/45_5757.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/46_2839.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/47_7592.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/48_4844.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/49_5090.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/50_2048.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/51_5681.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/52_7102.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/53_3336.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/54_8654.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/55_9337.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/56_7799.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/57_2668.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/58_3155.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/59_9610.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/60_2561.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/61_3939.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/62_5810.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/63_6400.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/64_6548.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/65_2904.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/66_9453.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/67_3762.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk=', 'http://image.mangabz.com/1/207/164936/68_5432.jpg?cid=164936&key=04dfe8076b3cb2abc92c69f22cc3cf8c&uk='
+        ]
     result = {}#先指定一个字典
-    username = request.GET.get('username')
-    mobile = request.GET.get('mobile')
+    mid = request.GET.get('mid')
+    cid = request.GET.get('cid')
+    _mid = request.GET.get('_mid')
+    _cid = request.GET.get('_cid')
+    page = int(request.GET.get('page'))
+    print(page)
     date = request.GET.get('date')
-    result['user'] = username
-    result['mobileNum'] = mobile
-    result['date'] = date
-    result = json.dumps(result)
+    sign = request.GET.get('sign')
+    key = request.GET.get('key')
     #指定返回数据类型为json且编码为utf-8
-    return HttpResponse(result,content_type='application/json;charset=utf-8')
+    limit = 2
+    if(page != len(img_list)):
+        result['img_url_list'] = img_list[page-1:page+limit-1]
+    else:
+        result['img_url_list'] = img_list[page-1:]
+    return HttpResponse(json.dumps(result), content_type='application/json;charset=utf-8')
 
 def page_not_found(request, exception):
     return render(request, '404.html', status=404)

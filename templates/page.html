@@ -2,9 +2,9 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>关于我转生后成为史莱姆的那件事漫画_第81话_关于我转生后成为史莱姆的那件事漫画在线阅读</title>
-  <meta name="Description" content="普通上班族三上悟（37，童贞）遇刺身亡。迎接他的，是..." />
-  <meta name="Keywords" content="关于我转生后成为史莱姆的那件事,关于我转生后成为史莱姆的那件事漫画,关于我转生后成为史莱姆的那件事漫画免费阅读" /> <!-- 样式引用 -->
+  <title>{{ data.title }}</title>
+  <meta name="Description" content="{{ data.description }}" />
+  <meta name="Keywords" content="{{ data.title }},{{ data.title }}漫画,{{ data.title }}漫画免费阅读" /> <!-- 样式引用 -->
   <link REL="shot icon" href="../static/images/favicon.ico"/>
   <link rel="stylesheet" type="text/css" href="../static/css/chapterreset.css" />
   <link rel="stylesheet" type="text/css" href="../static/css/chapterstyle.css" />
@@ -58,7 +58,7 @@
   <div class="bottom-bar">
     <div class="bottom-bar-tool">
       <div class="container">
-        <div class="bottom-right"> <a href="{{ data.chapter.chapter_url }}"><img src="../static/images/icon_shangyizhang.png" class="bottom-logo" /></a> <a href="javascript:ShowPre();"><img src="../static/images/icon_shangyiye.png" class="bottom-logo" /></a> <span class="bottom-page2"><span id="lbcurrentpage">1</span>-{{ data.chapter.page }}</span> <a href="javascript:ShowNext();"><img src="../static/images/icon_xiayiye.png" class="bottom-logo" /></a> </div>
+        <div class="bottom-right"> <a href="{{ data.chapter.chapter_url }}"><img src="../static/images/icon_shangyizhang.png" class="bottom-logo" /></a> <a href="javascript:ShowPre();"><img src="../static/images/icon_shangyiye.png" class="bottom-logo" /></a> <span class="bottom-page2"><span id="lbcurrentpage">{{ data.chapter.current_page }}</span>-{{ data.chapter.page }}</span> <a href="javascript:ShowNext();"><img src="../static/images/icon_xiayiye.png" class="bottom-logo" /></a> </div>
       </div>
     </div>
   </div>
